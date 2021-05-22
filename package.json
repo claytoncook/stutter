@@ -1,0 +1,28 @@
+{
+  "name": "stutter",
+  "version": "1.0.0",
+  "description": "Stutter stores your boilerplate code and dynamically generates new files.",
+  "type": "module",
+  "main": "index.js",
+  "keywords": [
+    "cli",
+    "web development"
+  ],
+  "bin": {
+    "stutter": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claytonleonardcook/stutter.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "stutter": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@claytonleonardcook",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^1.1.0"
+  }
+}
