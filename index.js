@@ -22,9 +22,9 @@ function main() {
                             if (error) return console.error(error);
                             console.log('Created test-template/config.json');
 
-                            writeFile(`${dotStutter}/templates/test-template/template`, 'Hello, __0__! Welcome to Stutter. Message: __1__', error => {
+                            writeFile(`${dotStutter}/templates/test-template/template.txt`, 'Hello, __0__! Welcome to Stutter. Message: __1__', error => {
                                 if (error) return console.error(error);
-                                console.log('Created test-template/template');
+                                console.log('Created test-template/template.txt');
 
                                 main();
                             });
@@ -38,7 +38,7 @@ function main() {
                     if (error) return console.error(error);
 
                     const { type, args } = JSON.parse(data);
-                    readFile(`${dotStutter}/templates/${template}/template`, 'utf8', (error, data) => {
+                    readFile(`${dotStutter}/templates/${template}/template${type}`, 'utf8', (error, data) => {
                         if (error) return console.error(error);
 
                         prompt.start();

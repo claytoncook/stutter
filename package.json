@@ -15,7 +15,6 @@
     "type": "git",
     "url": "https://github.com/claytonleonardcook/stutter.git"
   },
-  "devDependencies": {},
   "scripts": {
     "stutter": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
