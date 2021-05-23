@@ -1,7 +1,7 @@
 {
-  "name": "stutter",
+  "name": "stuttr",
   "version": "1.0.0",
-  "description": "Stutter stores your boilerplate code and dynamically generates new files.",
+  "description": "Stuttr is a CLI tool that allows users to create template documents that can then be filled out and added to the current directory.",
   "type": "module",
   "main": "index.js",
   "keywords": [
@@ -9,14 +9,14 @@
     "web development"
   ],
   "bin": {
-    "stutter": "index.js"
+    "stuttr": "index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/claytonleonardcook/stutter.git"
+    "url": "https://github.com/claytonleonardcook/stuttr.git"
   },
   "scripts": {
-    "stutter": "node index.js",
+    "stuttr": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@claytonleonardcook",

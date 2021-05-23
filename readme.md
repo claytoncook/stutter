@@ -1,22 +1,19 @@
-# Stutter
+# Stuttr
  
-Stutter is a CLI tool that allows users to create template documents that can then be filled out and added to the current directory.
-
-
-
+Stuttr is a CLI tool that allows users to create template documents that can then be filled out and added to the current directory.
 
 ## Installation
 
 Clone the project
 
 ```bash
-  git clone https://github.com/claytonleonardcook/stutter.git
+  git clone https://github.com/claytonleonardcook/stuttr.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd stutter
+  cd stuttr
 ```
 
 Link and make the program global
@@ -25,10 +22,10 @@ Link and make the program global
   npm link
 ```
 
-Use Stutter with the following arguments
+Use Stuttr with the following arguments
 
 ```bash
-  stutter templateName [newFileName]
+  stuttr templateName [newFileName]
 ```
 ## Overview
 
@@ -39,7 +36,7 @@ The main template folder can be named anything the user desires but any spaces
 within the name should be removed or replaced with a character.
 
 ```
-.stutter/test-template
+.stuttr/test-template
 ```
 
 The config.json is setup to hold the type of file the user is trying to create and
@@ -60,7 +57,7 @@ Within it, there are placeholders, denoted as ```__0__```, that are replaced by 
 the user inputs to the prompts.
 
 ```
-Hello, __0__! Welcome to Stutter. Message: __1__
+Hello, __0__! Welcome to Stuttr. Message: __1__
 ```
 
 When making your own template the best way to make sure everything works is to duplicate the
@@ -73,16 +70,16 @@ Using test-template, running the following command will output a file named test
 the current working directory.
 
 ```
-stutter test-template test
+stuttr test-template test
 ```
 
 Here's what the output of the program would look like:
 
 ```
-stutter test-template test
+stuttr test-template test
 
-Created .stutter directory!
-Created .stutter/templates directory
+Created .stuttr directory!
+Created .stuttr/templates directory
 Created templates/test-template directory
 Created test-template/config.json
 Created test-template/template.txt
@@ -95,14 +92,13 @@ Afterwards, you should be left with a test.txt file in your current working dire
 the following contents:
 
 ```
-Hello, Test Name! Welcome to Stutter. Message: Hello World!
+Hello, Test Name! Welcome to Stuttr. Message: Hello World!
 ```
 
-  
 ## Uninstalling
 
-If you want to uninstall Stutter you must use the following command.
+If you want to uninstall Stuttr you must use the following command.
 ```
-npm rm --global stutter
+npm rm --global stuttr
 ```
 Then, you can go ahead and delete the directory that the project is housed in.

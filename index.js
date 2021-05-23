@@ -3,26 +3,26 @@
 import { mkdir, writeFile, readFile, access } from 'fs';
 import prompt from 'prompt';
 
-const { argv: [node, stutter, template, newFileName = "file"] } = process;
-const dotStutter = `${process.env.USERPROFILE}/.stutter`;
+const { argv: [node, stuttr, template, newFileName = "file"] } = process;
+const dotStuttr = `${process.env.USERPROFILE}/.stuttr`;
 
 function main() {
-    access(dotStutter, error => {
+    access(dotStuttr, error => {
         if (error) {
-            mkdir(dotStutter, () => {
-                console.log('Created .stutter directory!');
+            mkdir(dotStuttr, () => {
+                console.log('Created .stuttr directory!');
 
-                mkdir(`${dotStutter}/templates`, () => {
-                    console.log('Created .stutter/templates directory');
+                mkdir(`${dotStuttr}/templates`, () => {
+                    console.log('Created .stuttr/templates directory');
 
-                    mkdir(`${dotStutter}/templates/test-template`, () => {
+                    mkdir(`${dotStuttr}/templates/test-template`, () => {
                         console.log('Created templates/test-template directory');
 
-                        writeFile(`${dotStutter}/templates/test-template/config.json`, '{ "type": ".txt", "args": ["Username", "Message"] }', error => {
+                        writeFile(`${dotStuttr}/templates/test-template/config.json`, '{ "type": ".txt", "args": ["Username", "Message"] }', error => {
                             if (error) return console.error(error);
                             console.log('Created test-template/config.json');
 
-                            writeFile(`${dotStutter}/templates/test-template/template.txt`, 'Hello, __0__! Welcome to Stutter. Message: __1__', error => {
+                            writeFile(`${dotStuttr}/templates/test-template/template.txt`, 'Hello, __0__! Welcome to Stuttr. Message: __1__', error => {
                                 if (error) return console.error(error);
                                 console.log('Created test-template/template.txt');
 
@@ -34,11 +34,11 @@ function main() {
             });
         } else {
             if (template) {
-                readFile(`${dotStutter}/templates/${template}/config.json`, 'utf8', (error, data) => {
+                readFile(`${dotStuttr}/templates/${template}/config.json`, 'utf8', (error, data) => {
                     if (error) return console.error(error);
 
                     const { type, args } = JSON.parse(data);
-                    readFile(`${dotStutter}/templates/${template}/template${type}`, 'utf8', (error, data) => {
+                    readFile(`${dotStuttr}/templates/${template}/template${type}`, 'utf8', (error, data) => {
                         if (error) return console.error(error);
 
                         prompt.start();
@@ -57,7 +57,7 @@ function main() {
                 });
             } else {
                 console.log('Please choose a valid template.');
-                console.log('stutter templateName newFileName');
+                console.log('stuttr templateName newFileName');
             }
         }
     });
